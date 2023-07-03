@@ -1,7 +1,8 @@
-﻿using MediaPlayer.src.Application;
-using MediaPlayer.src.Business.Sevice;
-using MediaPlayer.src.Domain.Core;
-using MediaPlayer.src.Infrastructure.Repository;
+﻿using Domain.src.Entity;
+using Domain.src.Interface;
+using Application.src.Controller;
+using Application.src.Service;
+using Infrastructure.src.Repository;
 
 internal class Program
 {
