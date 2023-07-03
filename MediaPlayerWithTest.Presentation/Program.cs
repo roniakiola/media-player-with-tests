@@ -1,5 +1,4 @@
 ﻿using Domain.src.Entity;
-using Domain.src.Interface;
 using Application.src.Controller;
 using Application.src.Service;
 using Infrastructure.src.Repository;

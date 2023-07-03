@@ -1,5 +1,3 @@
-using MediaPlayer.src.Domain.Core;
-
 namespace Domain.src.Interface.RepositoryInterface
 {
   public interface IUserRepository

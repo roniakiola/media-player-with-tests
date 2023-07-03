@@ -1,4 +1,4 @@
-using MediaPlayer.src.Business.ServiceInterface;
+using Domain.src.Interface.ServiceInterface;
 
 namespace Application.src.Controller
 {

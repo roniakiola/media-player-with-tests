@@ -1,6 +1,5 @@
-using MediaPlayer.src.Business.ServiceInterface;
-using MediaPlayer.src.Domain.Core;
-using MediaPlayer.src.Domain.RepositoryInterface;
+using Domain.src.Interface.ServiceInterface;
+using Domain.src.Interface.RepositoryInterface;
 
 namespace Application.src.Service
 {

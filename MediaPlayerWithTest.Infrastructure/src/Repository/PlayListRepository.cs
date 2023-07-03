@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediaPlayer.src.Domain.RepositoryInterface;
+using Domain.src.Interface.RepositoryInterface;
 
 namespace Infrastructure.src.Repository
 {
