@@ -1,42 +1,73 @@
 using Domain.src.Interface.RepositoryInterface;
+using Domain.src.Entity;
 
 namespace Infrastructure.src.Repository
 {
   public class MediaRepository : IMediaRepository
   {
-    public void CreateNewFile(string fileName, string filePath, TimeSpan duration)
+    private static MediaRepository? _instance;
+    private readonly List<MediaFile> _mediaFiles;
+
+    private MediaRepository()
     {
-      throw new NotImplementedException();
+      _mediaFiles = new();
     }
 
-    public void DeleteFileById(int fileId)
+    public static MediaRepository Instance
     {
-      throw new NotImplementedException();
+      get
+      {
+        if (_instance == null)
+        {
+          _instance = new MediaRepository();
+        }
+        return _instance;
+      }
     }
 
-    public void GetAllFiles()
+    public MediaFile CreateNewFile(string fileName, string filePath, TimeSpan duration)
     {
-      throw new NotImplementedException();
+      MediaFile mediaFile = new MediaFile(fileName, filePath, duration);
+      _mediaFiles.Add(mediaFile);
+      return mediaFile;
     }
 
-    public void GetFileById(int fileId)
+    public bool DeleteFileById(int fileId)
     {
-      throw new NotImplementedException();
+      MediaFile mediaFile = GetFileById(fileId);
+      if (mediaFile != null)
+      {
+        _mediaFiles.Remove(mediaFile);
+      }
+      return false;
+    }
+
+    public List<MediaFile> GetAllFiles()
+    {
+      return _mediaFiles;
+    }
+
+    public MediaFile GetFileById(int fileId)
+    {
+      return _mediaFiles.Find(file => file.GetId == fileId);
     }
 
     public void Pause(int fileId)
     {
-      throw new NotImplementedException();
+      MediaFile mediaFile = GetFileById(fileId);
+      mediaFile.Pause();
     }
 
     public void Play(int fileId)
     {
-      throw new NotImplementedException();
+      MediaFile mediaFile = GetFileById(fileId);
+      mediaFile.Play();
     }
 
     public void Stop(int fileId)
     {
-      throw new NotImplementedException();
+      MediaFile mediaFile = GetFileById(fileId);
+      mediaFile.Stop();
     }
   }
 }

@@ -1,6 +1,6 @@
 namespace Domain.src.Entity
 {
-  public class PlayList
+  public class PlayList : BaseEntity
   {
     private readonly List<MediaFile> _files = new();
     private readonly int _userId;

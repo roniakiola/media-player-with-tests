@@ -1,6 +1,6 @@
 namespace Domain.src.Entity
 {
-  public abstract class MediaFile : BaseEntity
+  public class MediaFile : BaseEntity
   {
     private double _playbackSpeed;
     private bool _isPlaying;
