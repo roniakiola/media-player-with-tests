@@ -4,23 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediaPlayer.src.Domain.RepositoryInterface;
 
-namespace MediaPlayer.src.Infrastructure.Repository
+namespace Infrastructure.src.Repository
 {
-    public class PlayListRepository : IPlayListRepository
+  public class PlayListRepository : IPlayListRepository
+  {
+    public void AddNewFile(int playListId, int fileId, int userId)
     {
-        public void AddNewFile(int playListId, int fileId, int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EmptyList(int playListId, int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveFile(int playListId, int fileId, int userId)
-        {
-            throw new NotImplementedException();
-        }
+      throw new NotImplementedException();
     }
+
+    public void EmptyList(int playListId, int userId)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void RemoveFile(int playListId, int fileId, int userId)
+    {
+      throw new NotImplementedException();
+    }
+  }
 }
