@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MediaPlayer.src.Domain.Core
+namespace Domain.src.Entity
 {
-    public abstract class BaseEntity
+  public abstract class BaseEntity
+  {
+    private static int _id;
+
+    public int GetId { get; } = _id;
+
+    public BaseEntity()
     {
-        private static int _id;
-
-        public int GetId { get; } = _id;
-
-        public BaseEntity()
-        {
-            _id++;
-        }
+      _id++;
     }
+  }
 }
