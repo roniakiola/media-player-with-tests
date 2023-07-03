@@ -24,15 +24,25 @@ namespace Tests.src.Application.Tests
       string filePath = "path/to/file.mp4";
       TimeSpan duration = TimeSpan.FromSeconds(180);
 
-      _mediaService.CreateNewFile(fileName, filePath, duration);
+      bool result = _mediaService.CreateNewFile(fileName, filePath, duration);
 
       _mockMediaRepository.Verify(r => r.CreateNewFile(fileName, filePath, duration), Times.Once);
+
+      Assert.True(result);
     }
 
     [Fact]
     public void DeleteFileById_ValidId_DeleteFile()
     {
+      string fileName = "testfile";
+      string filePath = "path/to/file.mp4";
+      TimeSpan duration = TimeSpan.FromSeconds(180);
 
+      MediaFile mediaFile = new MediaFile(fileName, filePath, duration);
+
+      bool result = _mediaService.DeleteFileById(mediaFile.GetId);
+
+      Assert.True(result);
     }
   }
 }

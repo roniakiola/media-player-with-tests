@@ -15,12 +15,7 @@ namespace Application.src.Service
 
     public bool CreateNewFile(string fileName, string filePath, TimeSpan duration)
     {
-      MediaFile result = _mediaRepository.CreateNewFile(fileName, filePath, duration);
-
-      if (result == null)
-      {
-        return false;
-      }
+      _mediaRepository.CreateNewFile(fileName, filePath, duration);
       return true;
     }
 

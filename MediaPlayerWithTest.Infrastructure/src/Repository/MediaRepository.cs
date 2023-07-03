@@ -5,12 +5,12 @@ namespace Infrastructure.src.Repository
 {
   public class MediaRepository : IMediaRepository
   {
-    private static MediaRepository? _instance;
+    private static MediaRepository _instance;
     private readonly List<MediaFile> _mediaFiles;
 
     private MediaRepository()
     {
-      _mediaFiles = new();
+      _mediaFiles = new List<MediaFile>();
     }
 
     public static MediaRepository Instance
@@ -38,6 +38,7 @@ namespace Infrastructure.src.Repository
       if (mediaFile != null)
       {
         _mediaFiles.Remove(mediaFile);
+        return true;
       }
       return false;
     }
