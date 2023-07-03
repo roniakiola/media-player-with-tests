@@ -13,11 +13,11 @@ internal class Program
     var userService = new UserService(userRepository);
     var userController = new UserController(userService);
 
-    var mediaRepository = new MediaRepository();
+    var mediaRepository = MediaRepository.Instance;
     var mediaService = new MediaService(mediaRepository);
     var mediaController = new MediaController(mediaService);
 
-    var playListRepository = new PlayListRepository();
+    var playListRepository = PlayListRepository.Instance;
     var playListService = new PlayListService(playListRepository);
     var playListController = new PlayListController(playListService);
 

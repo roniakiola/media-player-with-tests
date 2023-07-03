@@ -1,3 +1,4 @@
+using Domain.src.Entity;
 using Domain.src.Interface.ServiceInterface;
 using Domain.src.Interface.RepositoryInterface;
 
@@ -12,24 +13,30 @@ namespace Application.src.Service
       _mediaRepository = mediaRepository;
     }
 
-    public void CreateNewFile(string fileName, string filePath, TimeSpan duration)
+    public bool CreateNewFile(string fileName, string filePath, TimeSpan duration)
     {
-      _mediaRepository.CreateNewFile(fileName, filePath, duration);
+      MediaFile result = _mediaRepository.CreateNewFile(fileName, filePath, duration);
+
+      if (result == null)
+      {
+        return false;
+      }
+      return true;
     }
 
-    public void DeleteFileById(int id)
+    public bool DeleteFileById(int id)
     {
-      _mediaRepository.DeleteFileById(id);
+      return _mediaRepository.DeleteFileById(id);
     }
 
-    public void GetAllFiles()
+    public List<MediaFile> GetAllFiles()
     {
-      _mediaRepository.GetAllFiles();
+      return _mediaRepository.GetAllFiles();
     }
 
-    public void GetFileById(int id)
+    public MediaFile GetFileById(int id)
     {
-      _mediaRepository.GetFileById(id);
+      return _mediaRepository.GetFileById(id);
     }
   }
 }
